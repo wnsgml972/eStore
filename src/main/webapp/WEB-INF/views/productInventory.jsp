@@ -27,7 +27,10 @@
 						<td>${ product.manufacturer }</td>
 						<td>${ product.unitInStock }</td>
 						<td>${ product.description }</td>
-						<td> <a style="color:black;" href="<c:url value="/admin/productInventory/deleteProduct/${product.id}" />"><i class="fa fa-times"></i></a> </td>
+						<td>
+							<a style="color:black;" href="<c:url value="/admin/productInventory/deleteProduct/${product.id}" />"><i class="fa fa-times"></i></a>
+							<a style="color:black;" href="<c:url value="/admin/productInventory/updateProduct/${product.id}" />"><i class="fa fa-edit"></i></a>
+						</td>
 					</tr>
 				</c:forEach>
 			</tbody>
