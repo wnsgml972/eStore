@@ -15,6 +15,7 @@
 					<th>Manufacturer</th>
 					<th>UnitInStock</th>
 					<th>Description</th>
+					<th> </th>
 				</tr>
 			</thead>
 			<tbody>
@@ -26,11 +27,11 @@
 						<td>${ product.manufacturer }</td>
 						<td>${ product.unitInStock }</td>
 						<td>${ product.description }</td>
+						<td> <a style="color:black;" href="<c:url value="/admin/productInventory/deleteProduct/${product.id}" />"><i class="fa fa-times"></i></a> </td>
 					</tr>
 				</c:forEach>
 			</tbody>
 		</table>
-		
 		<a href="<c:url value="/admin/productInventory/addProduct" /> " class="btn btn-primary"> Add Product </a>
 		
 	</div>
