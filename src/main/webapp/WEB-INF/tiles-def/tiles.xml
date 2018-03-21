@@ -4,6 +4,7 @@
        "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
 <tiles-definitions>
 
+  <!--  Controller's return value, definition name matching -->
   <definition name="base" template="/WEB-INF/templates/layout.jsp">
     <put-attribute name="title" value="eStore homepage" />
     <put-attribute name="menu" value="/WEB-INF/templates/menu.jsp" />
@@ -11,15 +12,23 @@
   </definition>
   
   <definition name="home" extends="base">
-    <put-attribute name="title" value="eStore homepage" />
+    <put-attribute name="title" value="My eStore homepage" />
     <put-attribute name="body" value="/WEB-INF/views/home.jsp" />
   </definition>
   
   <definition name="products" extends="base">
-    <put-attribute name="title" value="eStore homepage" />
+    <put-attribute name="title" value="Products page" />
     <put-attribute name="body" value="/WEB-INF/views/products.jsp" />
   </definition>
-  <!--  Controller return value, definition name matching -->
-  
+
+  <definition name="admin" extends="base">
+    <put-attribute name="title" value="Administrator page" />
+    <put-attribute name="body" value="/WEB-INF/views/admin.jsp" />
+  </definition>
+
+  <definition name="productInventory" extends="base">
+    <put-attribute name="title" value="Product Inventory page" />
+    <put-attribute name="body" value="/WEB-INF/views/productInventory.jsp" />
+  </definition>  
 
 </tiles-definitions>
