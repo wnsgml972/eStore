@@ -23,8 +23,13 @@
 							href="<c:url value="/admin" />">AdminPage</a></li>
 					</c:if>
 					<li class="nav-item"><a class="nav-link"
-						href="<c:url value="/logout" />">Logout</a></li>
+						href="javascript:document.getElementById('logout').submit()">Logout</a></li>
+					<form id="logout" action="<c:url value="/logout" />" method="post">
+						<input type="hidden" name="${_csrf.parameterName}"
+							value="${_csrf.token}" />
+					</form>
 				</c:if>
+
 				<c:if test="${pageContext.request.userPrincipal.name == null}">
 					<li class="nav-item"><a class="nav-link"
 						href="<c:url value="/login" />">Login</a></li>
