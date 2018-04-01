@@ -46,4 +46,9 @@
     <put-attribute name="body" value="/WEB-INF/views/login.jsp" />
   </definition>  
   
+  <definition name="viewProduct" extends="base">
+    <put-attribute name="title" value="Products page" />
+    <put-attribute name="body" value="/WEB-INF/views/viewProduct.jsp" />
+  </definition> 
+  
 </tiles-definitions>
