@@ -23,6 +23,7 @@
  3. Define page 선언 (layout.jsp)
  4. Tiles definition .xml 파일 생성
  5. 각각의 Attribute 생성 ex) header, footer, navigation
+<br />
 
 ## CRUD
 
@@ -37,4 +38,19 @@
  2. controller 
  3. service -> dao -> get model
  4. return view page name 
- * 즉 각 흐름에 해당하는 부분을 만들어주면 된다.
+ 
+### 사용 법
+ 1. 각 흐름에 해당하는 부분을 만들어주면 된다.
+<br />
+
+## Validator
+
+### 사용 법
+ 1. pom.xml에 hibernate.validator (라이브러리 다운)
+ 2. Controller의 인자에 해당 모델에 @Valid Annotation 추가 결과를 받을 BindingResult 추가 
+   ex) (@Valid Product product, BindingResult result)
+ 3. Controller에서 result에 error가 있는지 체크함
+ 4. 검증 될 해당 모델에 조건에 따른 Annotation 추가
+   ex) @NotEmpty(message="The product name must not be null")
+ 5. view page에서 error를 리턴 했을 경우를 추가
+   ex) <sf:errors path="price" cssStyle="color:red" /> 
