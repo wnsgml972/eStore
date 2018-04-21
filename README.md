@@ -24,7 +24,6 @@
  4. Tiles definition .xml 파일 생성
  5. 각각의 Attribute 생성 ex) header, footer, navigation
 
-<br/>
 ## CRUD
 
 ### 정의
@@ -38,4 +37,4 @@
  2. controller 
  3. service -> dao -> get model
  4. return view page name 
- 5. 즉 각 흐름에 해당하는 부분을 만들어주면 된다.
+ * 즉 각 흐름에 해당하는 부분을 만들어주면 된다.
