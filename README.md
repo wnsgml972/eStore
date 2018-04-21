@@ -54,3 +54,11 @@
    ex) @NotEmpty(message="The product name must not be null")
  5. view page에서 error를 리턴 했을 경우를 추가
    ex) <sf:errors path="price" cssStyle="color:red" /> 
+<br />
+
+## Security
+
+### 사용 법
+ 1. pom.xml에서 security-config, security-web, security-core (라이브러리 다운)
+ 2. security-context.xml 추가 (web.xml에서 contextConfigureLocation param으로 넣어줘야 함)
+ 3. web.xml에 security filter 추가
