@@ -6,8 +6,10 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 import javax.validation.constraints.*;
 
+import org.springframework.web.multipart.MultipartFile;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -41,5 +43,9 @@ public class Product {
 	
 	private String description;
 	
+	@Transient //데이터 베이스에 저장하지 않는 객체!
+	private MultipartFile productImage;
+	
+	private String imageFilename;
 	
 }

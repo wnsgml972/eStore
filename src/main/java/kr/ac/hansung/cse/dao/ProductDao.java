@@ -44,12 +44,13 @@ public class ProductDao {
 
 	}
 
-	public void deleteProduct(Product product) {
+	public void deleteProduct(int id) {
 
 		Session session = sessionFactory.getCurrentSession();
-		session.delete(product);
-		session.flush();
-
+		String hql = "delete from Product where id = :id";
+		Query query = session.createQuery(hql);		
+		query.setParameter("id", id);
+		query.executeUpdate();
 	}
 
 

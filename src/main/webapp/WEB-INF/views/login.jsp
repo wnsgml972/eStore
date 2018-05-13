@@ -34,6 +34,7 @@
 					class="form-control" id="password" placeholder="Enter password"
 					name="password">
 			</div>
+			
 			<input type="hidden" name="${_csrf.parameterName}"
 				value="${_csrf.token}" />
 

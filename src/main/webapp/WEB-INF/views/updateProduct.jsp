@@ -9,8 +9,8 @@
 		<p class="lead">Fill the below information to add a product</p>
 
 		<sf:form
-			action="${ pageContext.request.contextPath}/admin/productInventory/updateProduct"
-			method="post" modelAttribute="product">
+			action="${ pageContext.request.contextPath}/admin/productInventory/updateProduct?${_csrf.parameterName}=${_csrf.token}"
+			method="post" modelAttribute="product" enctype="multipart/form-data">
 
 			<sf:hidden path="id" /> <!-- id도 함께 날라감!  원래 안날라감ㅠ -->
 			
@@ -52,10 +52,16 @@
 				<sf:input path="manufacturer" class="form-control" id="manufacturer" />
 				<sf:errors path="manufacturer" cssStyle="color:red" />
 			</div>
+			
+			<div class="form-group">
+				<label for="productImage">Upload Picture</label>
+				<sf:input path="productImage" class="form-control" id="productImage" type="file" />
+			</div>
 
 			<input type="submit" value="update" class="btn btn-primary" />
 			<a href="<c:url value="/admin/productInventory" />"
 				class="btn btn-default">Cancel</a>
+			
 		</sf:form>
 	</div>
 </div>

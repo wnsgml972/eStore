@@ -22,8 +22,8 @@ public class ProductService {
 		productDao.addProduct(product);
 	}
 
-	public void deleteProduct(Product product) {
-		productDao.deleteProduct(product);
+	public void deleteProduct(int id) {
+		productDao.deleteProduct(id);
 	}
 
 
