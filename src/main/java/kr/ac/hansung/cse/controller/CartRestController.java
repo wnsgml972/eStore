@@ -105,5 +105,63 @@ public class CartRestController {
 		return new ResponseEntity<Void>(HttpStatus.NO_CONTENT); //status code 204
 
 	}
+	
+	//plus! 
+	@RequestMapping(value="/cartitem/{productId}/1", method=RequestMethod.PUT)
+    public ResponseEntity<Void> plusItem(@PathVariable(value="productId")int productId){
+        Authentication authentication = 
+                SecurityContextHolder.getContext().getAuthentication();
+        String username = authentication.getName();
+        
+        User user = userService.getUserByUsername(username);
+        Cart cart = user.getCart();
+        
+        CartItem cartItem = cartItemService.getCartItemByProductId(cart.getId(), productId);
+        Product product = productService.getProductById(productId);
+        int quantitiy = cartItem.getQuantity();
+        quantitiy++;
+        
+        // 0 <= Quantity <= unitInStock 
+        if(quantitiy < 0)
+            quantitiy = 0;
+        else if(quantitiy > product.getUnitInStock())
+            quantitiy = product.getUnitInStock();
+        
+        cartItem.setQuantity(quantitiy);
+        cartItem.setTotalPrice(product.getPrice()*quantitiy);
+        cartItemService.addCartItem(cartItem);//saveOrUpdate
+        
+        return new ResponseEntity<Void>(HttpStatus.OK);
+ 
+    }
+    
+	//minus! 
+    @RequestMapping(value="/cartitem/{productId}/2",method=RequestMethod.PUT)
+    public ResponseEntity<Void> minusItem(@PathVariable(value="productId")int productId){
+        Authentication authentication = 
+                SecurityContextHolder.getContext().getAuthentication();
+        String username = authentication.getName();
+        
+        User user = userService.getUserByUsername(username);
+        Cart cart = user.getCart();
+        
+        CartItem cartItem = cartItemService.getCartItemByProductId(cart.getId(), productId);
+        Product product = productService.getProductById(productId);
+        int quantitiy = cartItem.getQuantity();
+        quantitiy--;
+        
+        // 0 <= Quantity <= unitInStock 
+        if(quantitiy < 0)
+            quantitiy = 0;
+        else if(quantitiy > product.getUnitInStock())
+            quantitiy = product.getUnitInStock();        
+        
+        cartItem.setQuantity(quantitiy);
+        cartItem.setTotalPrice(product.getPrice()*quantitiy);
+        cartItemService.addCartItem(cartItem);//saveOrUpdate
+        
+        return new ResponseEntity<Void>(HttpStatus.OK);
+    }
+
 
 }

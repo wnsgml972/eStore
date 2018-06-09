@@ -79,4 +79,33 @@ cartApp.controller("cartCtrl", function($scope, $http) { //controller 정의 : �
 		$http.defaults.headers.common[csrfHeader] = csrfToken;
 	}
 	
+	//report plus, minus
+    $scope.minusFromCart = function(productId) {
+ 
+        $scope.setCsrfToken();
+ 
+        $http({
+            method : 'PUT',
+            url : '/eStore/api/cart/cartitem/' + productId + '/2'   // 구분위해 만듬 2는 minus
+        }).then(function successCallback() {
+            $scope.refreshCart();
+        }, function errorCallback(response) {
+            console.log(response.data);
+        });
+    };
+    $scope.plusFromCart = function(productId) {
+ 
+        $scope.setCsrfToken();
+ 
+        $http({
+            method : 'PUT',
+            url : '/eStore/api/cart/cartitem/' + productId + '/1'  // 구분위해 만듬 1은 plus
+        }).then(function successCallback() {
+            $scope.refreshCart();
+        }, function errorCallback(response) {
+            console.log(response.data);
+        });        
+    };
+
+	
 });
