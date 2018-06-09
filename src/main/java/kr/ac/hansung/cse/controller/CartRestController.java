@@ -99,10 +99,10 @@ public class CartRestController {
 		User user = userService.getUserByUsername(username);
 		Cart cart = user.getCart();
 
-		//CartItem cartItem = cartItemService.getCartItemByProductId(cart.getId(), productId);
-		cartItemService.removeCartItem(cart.getId());
+		CartItem cartItem = cartItemService.getCartItemByProductId(cart.getId(), productId);
+		cartItemService.removeCartItem(cartItem);
 
-		return new ResponseEntity<Void>(HttpStatus.NO_CONTENT);
+		return new ResponseEntity<Void>(HttpStatus.NO_CONTENT); //status code 204
 
 	}
 

@@ -72,7 +72,7 @@ cartApp.controller("cartCtrl", function($scope, $http) { //controller 정의 : �
 		return grandTotal;
 	};
 	
-	$scope.setCsrfToken = function() { //setCsrfToken method
+	$scope.setCsrfToken = function() { //setCsrfToken method,  meta tag에 선언한 csrf 값을 가져 옴! -> http header 정보에 token 값이 담겨 날아감
 		var csrfToken = $("meta[name='_csrf']").attr("content");
 		var csrfHeader = $("meta[name='_csrf_header']").attr("content");
 		

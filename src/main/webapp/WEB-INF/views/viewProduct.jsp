@@ -1,34 +1,44 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@ taglib uri="http://www.springframework.org/tags/form" prefix="sf"%>
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-	pageEncoding="EUC-KR"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+	
+	<script src="<c:url value="/resources/js/controller.js" /> "></script>
 
-
-<div class="container-wrapper">
-	<div class="container">
-		<h2>Product Detail</h2>
-		<p>Here is the detail information of the product!</p>
-		<div class="row">
-			<div class="col-sm-8">
-				<c:set var="imageFilename"
-					value="/resources/images/${product.imageFilename}" />
-
-				<img src="<c:url value="${imageFilename}" />" alt="image"
-					style="width: 80%" />
+	<div class="container-wrapper">
+		<div class="container"  ng-app = "cartApp" >
+		
+			<h2>Product Detail</h2>
+			<p class="lead"> Here is the detail information of the product </p>
+			
+			<div class="row" ng-controller="cartCtrl">
+				<div class="col-md-6">
+					<img src="<c:url value="/resources/images/${product.imageFilename}" />"  alt="image" style="width:80%" />
+				</div>
+				
+				<div class="col-md-6">
+					<h3> ${product.name }</h3>
+					<p> <strong> Description: </strong> ${product.description} </p>
+					<p> <strong> Manufacturer: </strong> ${product.manufacturer} </p>
+					<p> <strong> Category: </strong> ${product.category} </p>
+					<p> <strong> Price: </strong> ${product.price} Ïõê </p>
+					
+					<br/>
+					
+					<c:if test="${pageContext.request.userPrincipal.name != null}">					
+						<p >
+							<a href="<c:url value="/products" />" class="btn btn-danger">Back</a>
+							
+							<button class="btn btn-warning btn-large" ng-click="addToCart('${product.id}')">
+								<i class="fa fa-shopping-cart"></i>Order Now
+							</button>
+							
+							<a	href="<c:url value="/cart" />" class="btn btn-info">
+								<i class="fa fa-eye"></i> View Cart
+							</a>
+						</p>
+					</c:if>
+				</div>
 			</div>
-			<div class="col-sm-4">
-				<h3>${product.name}</h3>
-				<p>${product.description}</p>
-				<p>
-					<b>Manufacturer</b> : ${ product.manufacturer }
-				</p>
-				<p>
-					<b>Category</b> : ${ product.category }
-				</p>
-				<h3>${ product.price } ø¯</h3>
-			</div>
+			
 		</div>
-
 	</div>
-</div>

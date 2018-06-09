@@ -8,6 +8,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
+    
+    <meta name="_csrf" content="${_csrf.token}"/>
+	<meta name="_csrf_header" content="${_csrf.headerName}"/>  <!-- csrf 토큰을 meta tag에 다 넣어 놈  -->   
+	
     <link rel="icon" href="<c:url value="/resources/favicon.ico"/>">
 	
     <title><tiles:insertAttribute name="title" /></title>

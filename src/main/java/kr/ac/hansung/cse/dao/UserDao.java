@@ -32,15 +32,15 @@ public class UserDao {
 		
 		return User;
 	}	
+	@SuppressWarnings("unchecked")
 	public User getUserByUsername(String username) {
-
 		Session session = sessionFactory.getCurrentSession();
-		//TypedQuery<User> query = session.createQuery("from User where username = ?");
-		//query.setParameter(0, username);
-		User User = (User) session.get(User.class, username);
-		
-		return User;
-	}	
+		TypedQuery<User> query = session.createQuery("from User where username = ?");
+		query.setParameter(0, username);
+
+		return query.getSingleResult();
+
+	}
 	@SuppressWarnings("unchecked")
 	public List<User> getUsers() {
 
