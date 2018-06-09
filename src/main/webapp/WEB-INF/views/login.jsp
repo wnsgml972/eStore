@@ -36,7 +36,7 @@
 			</div>
 			
 			<input type="hidden" name="${_csrf.parameterName}"
-				value="${_csrf.token}" />
+				value="${_csrf.token}" /> <!-- html form을 이용하였기 때문에 반드시 따로 csrf 토큰을 날려줘야 함  -->
 
 			<button type="submit" class="btn btn-primary">Submit</button>
 		</form>
