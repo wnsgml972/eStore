@@ -68,7 +68,7 @@ public class UserDao {
 	public void deleteUser(int id) {
 
 		Session session = sessionFactory.getCurrentSession();
-		String hql = "delete from users where id = :id";
+		String hql = "delete from User where id = :id";
 		Query query = session.createQuery(hql);	
 		query.setParameter("id", id);
 		query.executeUpdate();

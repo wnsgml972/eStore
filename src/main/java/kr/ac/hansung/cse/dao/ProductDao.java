@@ -43,7 +43,12 @@ public class ProductDao {
 		session.flush();
 
 	}
-
+	public void deleteProduct(Product product) {
+		Session session = sessionFactory.getCurrentSession();
+        session.delete(product);
+        session.flush();
+	}
+	
 	public void deleteProduct(int id) {
 
 		Session session = sessionFactory.getCurrentSession();

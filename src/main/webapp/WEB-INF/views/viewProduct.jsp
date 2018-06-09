@@ -12,7 +12,7 @@
 		<div class="row">
 			<div class="col-sm-8">
 				<c:set var="imageFilename"
-					value="/resources/images/${product.id}.png" />
+					value="/resources/images/${product.imageFilename}" />
 
 				<img src="<c:url value="${imageFilename}" />" alt="image"
 					style="width: 80%" />
@@ -26,7 +26,7 @@
 				<p>
 					<b>Category</b> : ${ product.category }
 				</p>
-				<h3>${ product.price }</h3>
+				<h3>${ product.price } ¿ø</h3>
 			</div>
 		</div>
 
