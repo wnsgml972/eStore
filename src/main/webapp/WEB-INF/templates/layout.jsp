@@ -9,7 +9,6 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="icon" href="<c:url value="/resources/favicon.ico"/>">
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 	
     <title><tiles:insertAttribute name="title" /></title>
 
@@ -19,6 +18,12 @@
     <!-- Custom styles for this template -->
 	<link href="<c:url value="/resources/css/carousel.css"/>" rel="stylesheet">
 	<link href="<c:url value="/resources/css/main.css"/>" rel="stylesheet">
+	
+    <!-- Font Awesome -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+	
+    <!-- AngularJS -->
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.10/angular.min.js"></script>
 	
   </head>
   <body>

@@ -10,7 +10,13 @@
 	<!-- DispatcherServlet Context: defines this servlet's request-processing 
 		infrastructure -->
 
-	<annotation-driven />
+	<annotation-driven>
+		<argument-resolvers>
+			<beans:bean
+				class="org.springframework.security.web.method.annotation.AuthenticationPrincipalArgumentResolver">
+			</beans:bean>
+		</argument-resolvers>
+	</annotation-driven>
 	<resources mapping="/resources/**" location="/resources/" />
 
 

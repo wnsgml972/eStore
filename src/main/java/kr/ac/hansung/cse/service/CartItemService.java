@@ -20,6 +20,11 @@ public class  CartItemService{
     public void removeCartItem(CartItem cartItem) {
         cartItemDao.removeCartItem(cartItem);
     }
+    
+
+    public void removeCartItem(int id) {
+        cartItemDao.removeCartItem(id);
+    }
 
     public void removeAllCartItems(Cart cart){
         cartItemDao.removeAllCartItems(cart);
