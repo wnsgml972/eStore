@@ -3,6 +3,7 @@ package kr.ac.hansung.cse.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.Authentication;
@@ -40,6 +41,10 @@ public class CartRestController {
 	@RequestMapping(value = "/{cartId}", method = RequestMethod.GET) //get¿∫ select
 	public ResponseEntity<Cart> getCartById(@PathVariable(value = "cartId") int cartId) {
 		Cart cart = cartService.getCartById(cartId);
+		
+		HttpHeaders headers = new HttpHeaders(); 
+		headers.setCacheControl("max-age=10");
+		
 		return new ResponseEntity<Cart>(cart, HttpStatus.OK);
 	}
 
