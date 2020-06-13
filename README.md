@@ -8,7 +8,7 @@ This project is a shopping mall using the Spring framework.
 
 ## Login
 
-![login](./assets/Login.gif)
+![login](./assets/login.gif)
 
 ## Show Products
 
@@ -16,7 +16,7 @@ This project is a shopping mall using the Spring framework.
 
 ## Register
 
-![register1](./assets/Register.gif)
+![register1](./assets/register1.gif)
 ![register2](./assets/register2.gif)
 
 ## AddCart
