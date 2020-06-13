@@ -8,7 +8,7 @@ This project is a shopping mall using the Spring framework.
 
 ## Login
 
-![login](./assets/login.gif)
+![login](./assets/login1.gif)
 
 ## Show Products
 
