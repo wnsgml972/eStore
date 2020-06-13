@@ -20,7 +20,7 @@ public class ShippingAddress {
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name="shippingAddressId")
 	private int id;
-	
+
 	private String address;
 	private String country;
 	private String zipCode;
