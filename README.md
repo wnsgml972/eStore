@@ -4,20 +4,18 @@
 
 This project is a shopping mall using the Spring framework.
 
-## User
-
-## Login
-
-![login](./assets/login1.gif)
-
-## Show Products
-
-![products](./assets/Products.gif)
-
 ## Register
 
 ![register1](./assets/register1.gif)
 ![register2](./assets/register2.gif)
+
+## Login
+
+![login](./assets/login.gif)
+
+## Show Products
+
+![products](./assets/Products.gif)
 
 ## AddCart
 
