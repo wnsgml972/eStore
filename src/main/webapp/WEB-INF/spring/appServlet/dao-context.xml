@@ -12,7 +12,7 @@
 	<context:property-placeholder location="/WEB-INF/props/jdbc.properties" />
 
 	<!-- 어노테이션 쓴데 -->
-	<context:annotation-config></context:annotation-config>
+	<context:annotation-config />
 
 	<!-- dbcp2를 사용하므로 주의 해야해!!! 패키지 이름 주의 -->
 	<bean id="dataSource" class="org.apache.commons.dbcp2.BasicDataSource"
@@ -24,11 +24,11 @@
 	</bean>
 
 	<!-- 이렇게 하면 자동으로 컴포넌트 annotaiton 해놓은것을 빈으로 등록할 수 있음 -->
-	<context:component-scan base-package="kr.ac.hansung.cse.dao"></context:component-scan>
+	<context:component-scan base-package="kr.ac.hansung.cse.dao" />
 
 	<bean id="sessionFactory"
 		class="org.springframework.orm.hibernate5.LocalSessionFactoryBean">
-		<property name="dataSource" ref="dataSource"></property>
+		<property name="dataSource" ref="dataSource" />
 		<property name="packagesToScan">
 			<list>
 				<value>kr.ac.hansung.cse.model</value>
@@ -49,7 +49,7 @@
 
 	<bean id="transactionManager"
 		class="org.springframework.orm.hibernate5.HibernateTransactionManager">
-		<property name="sessionFactory" ref="sessionFactory"></property>
+		<property name="sessionFactory" ref="sessionFactory" />
 	</bean>
 
 

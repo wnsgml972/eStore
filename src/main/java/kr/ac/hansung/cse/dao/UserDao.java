@@ -18,7 +18,7 @@ import kr.ac.hansung.cse.model.User;
 @Transactional
 public class UserDao {
 
-	
+
 	@Autowired
 	private SessionFactory sessionFactory;
 	

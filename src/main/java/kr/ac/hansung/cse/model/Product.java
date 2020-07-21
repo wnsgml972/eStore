@@ -22,11 +22,8 @@ import lombok.ToString;
 @ToString
 @Entity
 @Table(name="product")
-public class Product implements Serializable{
-	
-	/**
-	 * 
-	 */
+public class Product implements Serializable {
+
 	private static final long serialVersionUID = -567117648902464025L;
 
 	@Id
